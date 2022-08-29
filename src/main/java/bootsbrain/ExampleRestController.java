@@ -27,7 +27,7 @@ public class ExampleRestController {
             return param2;
         }
     }
-    @RequestMapping(path = "/hello",method = RequestMethod.GET, produces= MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(path = "/hello1",method = RequestMethod.GET, produces= MediaType.APPLICATION_JSON_VALUE)
     public RestResponse restMethod( String name, String middleName) {
         RestResponse result = new RestResponse();
         result.setParam1(name);

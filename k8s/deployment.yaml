@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: rest-demo
+  name: rest-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rest-demo
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: rest-demo
+    spec:
+      containers:
+      - image: alexwhoodoo/rest-demo-sum
+        name: rest-demo-sum
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: rest-demo
+  name: rest-demo
+spec:
+  ports:
+  - name: 8090-8090
+    port: 8090
+    protocol: TCP
+    targetPort: 8090
+  selector:
+    app: rest-demo
+  type: ClusterIP
+status:
+  loadBalancer: {}

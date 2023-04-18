@@ -69,7 +69,7 @@ public class ExampleRestController {
         result.setLongParam1(long1);
         result.setLongParam2(long2);
 
-        Long sum = result.getLongParam1() + result.getLongParam2();
+        Long sum = result.getLongParam1() + result.getLongParam2() + 12;
 
         result.setSum(sum);
 
